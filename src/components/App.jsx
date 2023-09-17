@@ -30,11 +30,10 @@ const App = () => {
           setIsLoading(false);
         });
     };
-
-    if (query !== "" || page !== 1) {
-      fetchImages();
-    }
+    if (!query) return;
+    fetchImages();
   }, [query, page]);
+  
 
   const handleSearchSubmit = (query) => {
     setQuery(query);
